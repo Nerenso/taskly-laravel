@@ -68,6 +68,31 @@
       <div class="flex gap-4 justify-center">
         <button class="px-4 py-3 bg-purple-600 font-semibold text-white rounded-md cursor-pointer">Get Started</button>
         <button>Watch Video</button>
+
+        <div class="card flex justify-content-center">
+          <Sidebar
+            v-model:visible="visible"
+            position="right"
+            class="bg-white dark:bg-slate-900 dark:text-slate-200 w-[320px]"
+            close-icon="false"
+            header="false"
+          >
+            <template #header>
+              <div class="flex items-center w-full justify-between">
+                <div>Taskly</div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+            </template>
+            <h2>Sidebar</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </Sidebar>
+          <Button icon="pi pi-arrow-right" @click="visible = true"> Menu </Button>
+        </div>
       </div>
     </section>
     <section class="w-full p-4 flex-1 dark:bg-slate-950 bg-slate-50 z-10">
@@ -84,9 +109,13 @@
 </template>
 
 <script setup>
+import Button from "primevue/button";
+import Sidebar from "primevue/sidebar";
+
 import { Link, Head } from "@inertiajs/vue3";
 import { useToggle } from "@vueuse/shared";
 import { useDark } from "@vueuse/core";
+import { ref } from "vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -98,4 +127,6 @@ const props = defineProps({
 });
 
 console.log(props.user);
+
+const visible = ref(false);
 </script>

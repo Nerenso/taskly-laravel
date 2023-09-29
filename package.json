@@ -19,6 +19,7 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
-        "@vueuse/core": "^10.4.1"
+        "@vueuse/core": "^10.4.1",
+        "primevue": "^3.35.0"
     }
 }
