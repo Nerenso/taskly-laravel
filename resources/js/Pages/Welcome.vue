@@ -70,27 +70,110 @@
         <button>Watch Video</button>
 
         <div class="card flex justify-content-center">
-          <Sidebar
+          <!-- <Sidebar
             v-model:visible="visible"
             position="right"
-            class="bg-white dark:bg-slate-900 dark:text-slate-200 w-[320px]"
+            class=""
             close-icon="false"
             header="false"
+            :unstyled="true"
+            :pt="{
+              root: {
+                class: `w-[320px] ${visible ? 'animate-fadeOutRight' : 'animate-fadeInRight'} animate-fast bg-slate-900 text-slate-200 z-[50]`,
+              },
+              content: { class: 'min-h-screen transform' },
+              mask: { class: ' bg-black/70 animate-in fade-in fade-out z-[40]' },
+              transition: ({ props }) => {
+                return props.position === 'top'
+                  ? {
+                      enterFromClass: 'translate-x-0 -translate-y-full translate-z-0',
+                      leaveToClass: 'translate-x-0 -translate-y-full translate-z-0',
+                    }
+                  : props.position === 'bottom'
+                  ? {
+                      enterFromClass: 'translate-x-0 translate-y-full translate-z-0',
+                      leaveToClass: 'translate-x-0 translate-y-full translate-z-0',
+                    }
+                  : props.position === 'left'
+                  ? {
+                      enterFromClass: '-translate-x-full translate-y-0 translate-z-0',
+                      leaveToClass: '-translate-x-full translate-y-0 translate-z-0',
+                    }
+                  : props.position === 'right'
+                  ? {
+                      enterFromClass: 'translate-x-full translate-y-0 translate-z-0',
+                      leaveToClass: 'translate-x-full translate-y-0 translate-z-0',
+                    }
+                  : {
+                      enterFromClass: 'opacity-0',
+                      enterActiveClass: 'transition-opacity duration-400 ease-in',
+                      leaveActiveClass: 'transition-opacity duration-400 ease-in',
+                      leaveToClass: 'opacity-0',
+                    };
+              },
+            }"
           >
-            <template #header>
-              <div class="flex items-center w-full justify-between">
-                <div>Taskly</div>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </div>
-            </template>
+            <div class="flex items-center w-full justify-between p-4">
+              <div>Taskly</div>
+              <svg
+                @click="visible = !visible"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6 cursor-pointer"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+
             <h2>Sidebar</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
               minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-          </Sidebar>
+          </Sidebar> -->
+
+          <BaseDrawer :visible="visible" @close="visible = false">
+            <div class="flex flex-col h-screen overflow-y-hidden">
+              <header class="flex items-center justify-between p-4">
+                <div class="text-lg font-bold text-slate-800 dark:text-white">Taskly</div>
+                <button @click="visible = false" class="">X</button>
+              </header>
+              <section class="bg-blue-400 flex-1 p-4 text-xl overflow-y-auto">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam asperiores quasi consectetur est amet neque a beatae quidem
+                obcaecati nostrum, impedit voluptate officiis nesciunt reprehenderit atque totam doloribus cum omnis. Rem dolor quo voluptate ratione
+                facere quod autem suscipit cupiditate maiores. Maiores tempore, iure est consectetur excepturi sapiente eos, deserunt possimus
+                quibusdam, laborum sit tenetur atque aliquam laboriosam dolor voluptas. Iusto quidem facilis quos quis sequi impedit reprehenderit
+                ducimus, eius, vel laboriosam, eaque odit consequuntur quisquam fugit blanditiis soluta veritatis? Nostrum et delectus, voluptates
+                explicabo aliquid ut vero ratione velit. Velit, maxime! Similique blanditiis enim vero. Blanditiis porro perspiciatis eum eveniet
+                explicabo aperiam numquam modi error repellendus. Nesciunt tempore voluptatem quod iusto quam. Exercitationem nemo accusantium,
+                accusamus minima eveniet consectetur! Voluptatem error enim debitis dolores iste veritatis, quaerat aperiam, eaque assumenda illo,
+                aspernatur necessitatibus. Officia nulla modi ipsa error numquam tempore ullam quisquam iusto, corporis, dicta nostrum quae ratione
+                qui! Dicta expedita eum, numquam rerum animi at earum culpa dignissimos rem et dolor inventore repellendus aliquid eligendi
+                accusantium ab provident, eius velit, doloribus vero soluta officia. Libero nisi omnis aperiam. Animi facilis quidem recusandae
+                aspernatur tenetur aperiam nesciunt delectus est! Quis libero qui, debitis facilis atque consequatur cupiditate quas eaque cumque
+                voluptatibus explicabo, ducimus voluptate distinctio accusantium dolore tempora omnis? Eaque explicabo quasi alias magnam
+                exercitationem nobis magni. Consequuntur eos vel, cupiditate quos optio nemo cum, quisquam odio necessitatibus molestiae tempore fuga
+                quod veritatis tempora, aliquam quaerat nihil enim doloremque. Maxime nisi ipsa tempore fugit possimus quod reiciendis culpa iusto
+                expedita aspernatur. Cupiditate iusto fugit sequi rerum nemo corporis inventore doloremque, quas quia ex voluptatum expedita nesciunt,
+                accusamus repellendus? Ratione. Quos sint, delectus atque laborum quis magnam culpa debitis, quia, aliquid harum molestias doloribus?
+                Culpa aliquid aliquam distinctio reiciendis vel. Harum, voluptatum. Sed similique officiis blanditiis voluptatem ullam. Reiciendis,
+                maiores? Tempore dicta aspernatur facere aliquid eaque asperiores sint rem quibusdam iste soluta doloremque saepe, animi sed pariatur.
+                Ratione, iste iure. Consequatur corporis at porro praesentium vitae cumque pariatur recusandae dignissimos. Id blanditiis nesciunt
+                inventore accusantium debitis earum non mollitia, obcaecati maiores suscipit est praesentium ullam, quam doloribus excepturi facilis
+                quia voluptatum fugiat sit beatae numquam, animi dicta cum. Eius, incidunt? Dolore id deserunt necessitatibus itaque, neque, quo
+                maxime iste ab unde inventore totam nesciunt? Consequuntur nulla quos, dolorum consequatur cumque ipsum alias, necessitatibus
+                doloribus dolore repellat delectus, odit hic magnam. Fugit eveniet mollitia, perferendis quidem nulla quisquam cupiditate velit enim!
+                At atque iusto vel eum sapiente nisi, veniam, possimus dolore magni numquam cumque nobis cum consequatur doloribus consequuntur sint
+                error. Quisquam consequuntur nihil doloremque dolor voluptas, assumenda amet? Pariatur illo doloremque quam, maxime distinctio minus
+                corporis veritatis. Praesentium id possimus, libero nihil a dolorum excepturi totam nam repellendus optio quo?
+              </section>
+              <footer class="bg-red-400 p-4">Footer</footer>
+            </div>
+          </BaseDrawer>
+
           <Button icon="pi pi-arrow-right" @click="visible = true"> Menu </Button>
         </div>
       </div>
@@ -116,17 +199,14 @@ import { Link, Head } from "@inertiajs/vue3";
 import { useToggle } from "@vueuse/shared";
 import { useDark } from "@vueuse/core";
 import { ref } from "vue";
+import BaseDrawer from "@/Components/BaseDrawer.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
 
-console.log(isDark.value);
-
 const props = defineProps({
   user: Object,
 });
-
-console.log(props.user);
 
 const visible = ref(false);
 </script>
