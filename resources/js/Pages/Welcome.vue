@@ -66,75 +66,10 @@
         The smart and simple way to manage your projects, collaborate with your team, and achieve your goals.
       </p>
       <div class="flex gap-4 justify-center">
-        <button class="px-4 py-3 bg-purple-600 font-semibold text-white rounded-md cursor-pointer">Get Started</button>
+        <button @click="visible = true" class="px-4 py-3 bg-purple-600 font-semibold text-white rounded-md cursor-pointer">Open Menu</button>
         <button>Watch Video</button>
 
         <div class="card flex justify-content-center">
-          <!-- <Sidebar
-            v-model:visible="visible"
-            position="right"
-            class=""
-            close-icon="false"
-            header="false"
-            :unstyled="true"
-            :pt="{
-              root: {
-                class: `w-[320px] ${visible ? 'animate-fadeOutRight' : 'animate-fadeInRight'} animate-fast bg-slate-900 text-slate-200 z-[50]`,
-              },
-              content: { class: 'min-h-screen transform' },
-              mask: { class: ' bg-black/70 animate-in fade-in fade-out z-[40]' },
-              transition: ({ props }) => {
-                return props.position === 'top'
-                  ? {
-                      enterFromClass: 'translate-x-0 -translate-y-full translate-z-0',
-                      leaveToClass: 'translate-x-0 -translate-y-full translate-z-0',
-                    }
-                  : props.position === 'bottom'
-                  ? {
-                      enterFromClass: 'translate-x-0 translate-y-full translate-z-0',
-                      leaveToClass: 'translate-x-0 translate-y-full translate-z-0',
-                    }
-                  : props.position === 'left'
-                  ? {
-                      enterFromClass: '-translate-x-full translate-y-0 translate-z-0',
-                      leaveToClass: '-translate-x-full translate-y-0 translate-z-0',
-                    }
-                  : props.position === 'right'
-                  ? {
-                      enterFromClass: 'translate-x-full translate-y-0 translate-z-0',
-                      leaveToClass: 'translate-x-full translate-y-0 translate-z-0',
-                    }
-                  : {
-                      enterFromClass: 'opacity-0',
-                      enterActiveClass: 'transition-opacity duration-400 ease-in',
-                      leaveActiveClass: 'transition-opacity duration-400 ease-in',
-                      leaveToClass: 'opacity-0',
-                    };
-              },
-            }"
-          >
-            <div class="flex items-center w-full justify-between p-4">
-              <div>Taskly</div>
-              <svg
-                @click="visible = !visible"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 cursor-pointer"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </div>
-
-            <h2>Sidebar</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-              minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-          </Sidebar> -->
-
           <BaseDrawer :visible="visible" @close="visible = false">
             <div class="flex flex-col h-screen overflow-y-hidden">
               <header class="flex items-center justify-between p-4">
@@ -173,8 +108,6 @@
               <footer class="bg-red-400 p-4">Footer</footer>
             </div>
           </BaseDrawer>
-
-          <Button icon="pi pi-arrow-right" @click="visible = true"> Menu </Button>
         </div>
       </div>
     </section>
@@ -192,9 +125,6 @@
 </template>
 
 <script setup>
-import Button from "primevue/button";
-import Sidebar from "primevue/sidebar";
-
 import { Link, Head } from "@inertiajs/vue3";
 import { useToggle } from "@vueuse/shared";
 import { useDark } from "@vueuse/core";
