@@ -70,10 +70,10 @@
         <button>Watch Video</button>
 
         <div class="card flex justify-content-center">
-          <BaseDrawer :visible="visible" @close="visible = false">
-            <div class="flex flex-col h-screen overflow-y-hidden">
-              <header class="flex items-center justify-between p-4">
-                <div class="text-lg font-bold text-slate-800 dark:text-white">Taskly</div>
+          <MBaseDrawer :is-visible="visible" @close="visible = false">
+            <div class="flex flex-col h-full overflow-y-hidden bg-white dark:bg-slate-800">
+              <header class="flex items-center justify-between p-4 text-slate-800 dark:text-white">
+                <div class="text-lg font-bold">Taskly</div>
                 <button @click="visible = false" class="">X</button>
               </header>
               <section class="bg-blue-400 flex-1 p-4 text-xl overflow-y-auto">
@@ -107,7 +107,7 @@
               </section>
               <footer class="bg-red-400 p-4">Footer</footer>
             </div>
-          </BaseDrawer>
+          </MBaseDrawer>
         </div>
       </div>
     </section>
@@ -130,6 +130,7 @@ import { useToggle } from "@vueuse/shared";
 import { useDark } from "@vueuse/core";
 import { ref } from "vue";
 import BaseDrawer from "@/Components/BaseDrawer.vue";
+import MBaseDrawer from "@/Components/MBaseDrawer.vue";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);

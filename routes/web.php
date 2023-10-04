@@ -31,6 +31,22 @@ Route::get('/test', function () {
     return Inertia::render('Test');
 });
 
+Route::get('/motion-test', function () {
+    return Inertia::render('MotionTest');
+});
+
+Route::get('/playground', function () {
+    return Inertia::render(('PlayGround'));
+});
+
+Route::get('/sidebar', function () {
+    return Inertia::render('Sidebar');
+});
+
+Route::get('/sidebar-motion', function () {
+    return Inertia::render('SidebarMotion');
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
