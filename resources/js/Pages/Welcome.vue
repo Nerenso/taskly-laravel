@@ -24,8 +24,8 @@
         ></path>
       </svg>
     </div>
-    <img src="/assets/bg2.jpg" class="absolute top-0 w-full z-0 opacity-[0.1] dark:opacity-[0.2] h-[800px] object-cover" />
-    <section class="mx-auto w-full text-center pt-48 pb-32 z-10 bg-cover relative p-4">
+    <img src="/assets/bg3.jpeg" class="absolute top-0 w-full z-0 blur-2xl opacity-[0.2] dark:opacity-[0.2] h-[800px] object-cover" />
+    <section class="mx-auto w-full text-center py-36 z-10 bg-cover relative p-4">
       <h2 class="text-4xl md:text-[48px] font-bold text-center dark:text-white mb-4">
         Stay <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-fuchsia-600">Organized</span> and on Track!
       </h2>
