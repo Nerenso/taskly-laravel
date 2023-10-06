@@ -5,7 +5,7 @@
         <Motion
           v-if="show"
           @click="hideSideBar"
-          class="fixed top-0 bg-black/40 dark:bg-black/60 h-screen w-full z-40"
+          class="fixed top-0 bg-black/50 dark:bg-black/70 h-screen w-full z-40"
           :initial="{ opacity: 0 }"
           :animate="{ opacity: 1 }"
           :exit="{ opacity: 0 }"
@@ -16,11 +16,11 @@
       <Presence>
         <Motion
           v-if="show"
-          class="fixed right-0 top-0 h-[100dvh] w-[320px] bg-white z-50 shadow-lg"
-          :initial="{ x: 320 }"
-          :animate="{ x: 0 }"
-          :exit="{ x: 320 }"
-          :transition="{ duration: 0.3 }"
+          class="fixed top-0 max-w-lg inset-x-0 mx-auto z-50 overflow-hidden"
+          :initial="{ y: -300, scale: 0.5, opacity: 0 }"
+          :animate="{ y: 0, scale: 1, opacity: 1 }"
+          :exit="{ y: -300, scale: 0.5, opacity: 0 }"
+          :transition="{ duration: 0.3, easing: 'ease' }"
         >
           <slot></slot>
         </Motion>
