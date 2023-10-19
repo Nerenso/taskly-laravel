@@ -34,7 +34,7 @@ class TaskController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'body' => 'string|required:max:255'
+            'body' => 'required|max:255'
         ]);
 
         $request->user()->tasks()->create($validated);
@@ -63,7 +63,13 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        $validated = $request->validate([
+            'body' => 'required|max:255'
+        ]);
+
+        $task->update($validated);
+
+        return redirect(route('task.index'));
     }
 
     /**
@@ -71,6 +77,13 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        $task->delete();
+    }
+
+    public function toggle(Task $task)
+    {
+        $task->completed = !$task->completed;
+
+        $task->save();
     }
 }

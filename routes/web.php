@@ -40,7 +40,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::resource('task', TaskController::class)->only(['index', 'store'])->middleware('auth');
+
+Route::post('task/{task}/completed', [TaskController::class, 'toggle'])->middleware('auth')->name('task.toggle');
+Route::resource('task', TaskController::class)->only(['index', 'store', 'update', 'destroy'])->middleware('auth');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
