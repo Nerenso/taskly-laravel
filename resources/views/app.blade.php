@@ -17,7 +17,7 @@
   @inertiaHead
 </head>
 
-<body class="font-inter antialiased">
+<body class="font-inter antialiased flex flex-col min-h-screen">
 
   @inertia
 

@@ -1,14 +1,15 @@
 <template>
-  <header class="w-full z-30 sticky top-0 backdrop-blur-lg">
+  <header class="w-full z-30 sticky top-0 backdrop-blur-lg text-slate-800 dark:text-slate-300">
     <div class="border-b border-slate-300 dark:border-slate-600 max-w-5xl mx-auto">
       <nav class="flex justify-between max-w-5xl w-full mx-auto items-center py-4 px-4 lg:px-0 p">
         <Link class="text-3xl font-bold" href="/">Taskly</Link>
 
-        <div v-if="!props.user" class="hidden md:flex items-center gap-4">
-          <Link :href="route('login')">Login</Link>
-          <Link :href="route('register')">Register</Link>
-
-          <button @click="toggleDark()" class="px-1.5 py-1.5 border border-slate-400 dark:border-slate-600 rounded-md">
+        <div class="flex items-center gap-4">
+          <div v-if="!props.user" class="hidden md:flex items-center gap-4">
+            <Link :href="route('login')">Login</Link>
+            <Link :href="route('register')">Register</Link>
+          </div>
+          <button @click="toggleDark()" class="hidden md:block px-1.5 py-1.5 border border-slate-400 dark:border-slate-600 rounded-md">
             <span class="text-slate-800 dark:text-slate-300">
               <SunIcon v-if="isDark" class="w-5 h-5" />
               <MoonIcon v-else class="w-5 h-5" />
