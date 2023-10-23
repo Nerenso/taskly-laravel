@@ -78,16 +78,157 @@
         </div>
       </div>
     </section>
-    <section class="w-full p-4 flex-1 dark:bg-slate-950 bg-slate-50 z-10">
-      <div class="max-w-5xl mx-auto">
-        <h3 class="text-3xl font-bold mb-8">How does it work?</h3>
-        <div class="w-full grid grid-cols-3 gap-8">
-          <div class="border dark:border-slate-600 rounded-lg p-8 self-start">1</div>
-          <div class="border dark:border-slate-600 rounded-lg p-8 mt-20 self-start">2</div>
-          <div class="border dark:border-slate-600 rounded-lg p-8 mt-40">3</div>
+    <div class="w-full bg-layer-1 p-6 text-center md:p-20 bg-gradient-to-b from-transparent dark:to-slate-900 to-white to-20% z-20">
+      <div class="mx-auto w-full max-w-6xl">
+        <span
+          class="leading-sm inline-flex items-center rounded-full border-2 border-orange-200 bg-orange-200 px-2 py-0.5 text-xs font-bold uppercase text-orange-600 shadow-sm"
+        >
+          <!-- Heroicon name: outline/light-bulb -->
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="mr-1 h-5 w-5">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="{2}"
+              d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+            />
+          </svg>
+          Features
+        </span>
+        <h2 class="mx-auto mt-4 text-center text-3xl font-semibold tracking-tight text-heading md:max-w-2xl md:text-4xl">
+          Simplicity is key. Elevate your copy with a simple design.
+        </h2>
+        <p class="mt-6 text-xl text-text">Here is a section with two features or points and a subheading.</p>
+
+        <div class="mt-12 grid grid-cols-1 gap-y-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="p-5 text-center md:p-8">
+            <div class="inline-block rounded-3xl bg-layer-2 py-4 px-4">
+              <!-- Heroicon name: outline/view-grid -->
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 stroke-gradient gradient-dusk"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-heading">A simple heading</h3>
+            <p class="mt-2 text-center text-lg text-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="p-5 text-center md:p-8">
+            <div class="inline-block rounded-3xl bg-layer-2 py-4 px-4">
+              <!-- Heroicon name: outline/wifi -->
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 stroke-gradient gradient-lime"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"
+                />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-heading">A simple heading</h3>
+            <p class="mt-2 text-center text-lg text-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="p-5 text-center md:p-8">
+            <div class="inline-block rounded-3xl bg-layer-2 py-4 px-4">
+              <!-- Heroicon name: outline/shield-check -->
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 stroke-gradient gradient-peach"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-heading">A simple heading</h3>
+            <p class="mt-2 text-center text-lg text-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="p-5 text-center md:p-8">
+            <div class="inline-block rounded-3xl bg-layer-2 py-4 px-4">
+              <!-- Heroicon name: outline/bell -->
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 stroke-gradient gradient-sky"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-heading">A simple heading</h3>
+            <p class="mt-2 text-center text-lg text-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="p-5 text-center md:p-8">
+            <div class="inline-block rounded-3xl bg-layer-2 py-4 px-4">
+              <!-- Heroicon name: outline/sun -->
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 stroke-gradient gradient-dusk"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-heading">A simple heading</h3>
+            <p class="mt-2 text-center text-lg text-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="p-5 text-center md:p-8">
+            <div class="inline-block rounded-3xl bg-layer-2 py-4 px-4">
+              <!-- Heroicon name: outline/sparkles -->
+              <svg
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8 stroke-gradient gradient-cotton-candy"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+                />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-xl font-semibold text-heading">A simple heading</h3>
+            <p class="mt-2 text-center text-lg text-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
