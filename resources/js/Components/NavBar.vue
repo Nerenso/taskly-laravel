@@ -9,6 +9,9 @@
             <Link :href="route('login')">Login</Link>
             <Link :href="route('register')">Register</Link>
           </div>
+          <div v-else class="hidden md:block">
+            <Link :href="route('logout')" method="post" as="button">Logout</Link>
+          </div>
           <button @click="toggleDark()" class="hidden md:block px-1.5 py-1.5 border border-slate-400 dark:border-slate-600 rounded-md">
             <span class="text-slate-800 dark:text-slate-300">
               <SunIcon v-if="isDark" class="w-5 h-5" />
@@ -28,12 +31,13 @@
               </header>
               <nav class="flex flex-col gap-4">
                 <div v-if="!props.user" class="flex flex-col gap-4 text-xl mt-8">
-                  <p>About Us</p>
-                  <p>Contact</p>
                   <Link :href="route('login')">Login</Link>
                   <Link :href="route('register')">Register</Link>
                 </div>
-                <div @click="toggleDark()" class="cursor-pointer flex items-center justify-between mt-8">
+                <div v-else class="mt-8">
+                  <Link :href="route('logout')" method="post" as="button">Logout</Link>
+                </div>
+                <div @click="toggleDark()" class="cursor-pointer flex items-center justify-between mt-2">
                   <span>{{ isDark ? "Enable Light Mode" : "Enable Dark Mode" }}</span>
                   <button class="px-1.5 py-1.5 border border-slate-400 dark:border-slate-600 rounded-md">
                     <span class="text-slate-800 dark:text-slate-300">

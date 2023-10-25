@@ -6,9 +6,9 @@
     <div v-if="$page.props.flash.message">
       {{ $page.props.flash.message }}
     </div>
-    <main class="w-full flex-1 flex justify-center items-center px-4">
+    <main class="w-full h-full flex-1 flex justify-center items-center px-4 py-4">
       <div
-        class="h-[500px] max-w-lg bg-white dark:bg-slate-900 flex w-full flex-col rounded-lg shadow-lg overflow-hidden text-slate-800 dark:text-slate-300"
+        class="h-full max-h-[80vh] max-w-lg bg-white dark:bg-slate-900 flex w-full flex-col rounded-lg shadow-lg overflow-hidden text-slate-800 dark:text-slate-300"
       >
         <h2 class="font-bold text-2xl p-6 border-b dark:border-slate-600">Welcome👋🏻 Here are your tasks</h2>
 
@@ -45,7 +45,7 @@
         </section>
 
         <form v-if="!taskToEdit" @submit.prevent="submitCreateForm" class="p-6 border-t dark:border-slate-600">
-          <div class="flex items-center gap-2">
+          <div class="flex items-center flex-wrap sm:flex-nowrap gap-2">
             <input
               id="task-body"
               name="task-body"
@@ -54,13 +54,13 @@
               placeholder="Call mom"
               class="w-full dark:placeholder:text-slate-600 dark:bg-slate-800 dark:border-slate-600 rounded-md border-slate-300"
             />
-            <button class="px-4 py-2 bg-purple-600 font-semibold text-white rounded-md cursor-pointer">Add</button>
+            <button class="px-4 py-2 w-full sm:w-fit bg-purple-600 font-semibold text-white rounded-md cursor-pointer">Add</button>
           </div>
           <div v-if="createForm.errors.body" class="text-xs text-red-500 mt-2">{{ createForm.errors.body }}</div>
         </form>
 
         <form v-else class="border-t dark:border-slate-600 p-6">
-          <div class="flex items-center gap-2">
+          <div class="flex flex-wrap sm:flex-nowrap items-center gap-2">
             <input
               id="task-body"
               name="task-body"
@@ -69,12 +69,20 @@
               placeholder="Call mom"
               class="w-full dark:placeholder:text-slate-600 dark:bg-slate-800 dark:border-slate-600 rounded-md border-slate-300"
             />
-            <button @click.prevent="submitEditForm(taskToEdit.id)" class="px-4 py-2 bg-purple-600 font-semibold text-white rounded-md cursor-pointer">
-              Save
-            </button>
-            <button @click.prevent="taskToEdit = null" class="px-4 py-2 bg-purple-600 font-semibold text-white rounded-md cursor-pointer">
-              Cancel
-            </button>
+            <div class="flex items-center gap-2 w-full sm:w-fit">
+              <button
+                @click.prevent="submitEditForm(taskToEdit.id)"
+                class="px-4 py-2 bg-purple-600 font-semibold text-white w-1/2 sm:w-fit rounded-md cursor-pointer"
+              >
+                Save
+              </button>
+              <button
+                @click.prevent="taskToEdit = null"
+                class="px-4 py-2 bg-slate-500 font-semibold text-white rounded-md cursor-pointer w-1/2 sm:w-fit"
+              >
+                Cancel
+              </button>
+            </div>
           </div>
           <div v-if="editForm.errors.body" class="text-xs text-red-500 mt-2">{{ editForm.errors.body }}</div>
         </form>
