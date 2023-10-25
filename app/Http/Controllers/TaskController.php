@@ -15,8 +15,12 @@ class TaskController extends Controller
      */
     public function index(): Response
     {
+        // return Inertia::render('Task/Index', [
+        //     'tasks' => Task::with('user:id,name')->latest()->get()
+        // ]);
+
         return Inertia::render('Task/Index', [
-            'tasks' => Task::with('user:id,name')->latest()->get()
+            'tasks' => Task::where('user_id', "=", auth()->user()->id)->latest()->get()
         ]);
     }
 
@@ -63,6 +67,8 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
+        $this->authorize('update', $task);
+
         $validated = $request->validate([
             'body' => 'required|max:255'
         ]);
@@ -77,6 +83,8 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        $this->authorize('delete', $task);
+
         $task->delete();
     }
 
